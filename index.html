@@ -7,7 +7,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/main.js"></script>
 </head>
 <body>
 
@@ -18,8 +17,16 @@
             <img src="assets/images/Logo.png" alt="Rain Eagles">
             <p>✦ Rain Eagles</p>
         </a>
+
+        <!-- menu burger (visible que sur mobile) -->
+        <button class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <!-- Liens à droite -->
-        <ul>
+        <ul id="nav-menu">
             <li><a href="about.html">✦ À propos</a></li>
             <li><a href="member.html">✦ Membres</a></li>
             <li><a href="dressage.html">✦ Dressage</a></li>
@@ -56,7 +63,7 @@
             <a href="member.html">Membres</a>
             <span>✦</span>
             <a href="dressage.html">Dressage</a>
-            <span>✦</span>
+            <span class="Diams">✦</span>
             <a href="competition.html">Compétition</a>
             <span>✦</span>
             <a href="gallery.html">Galerie</a>
@@ -70,6 +77,8 @@
         </div>
         <p class="footer-copy">© 2015–2026 Rain Eagles · Diamond Island · SSO FR</p>
     </footer>
+
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>
