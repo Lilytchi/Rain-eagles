@@ -1,0 +1,324 @@
+/* ============================================
+   RAIN EAGLES — style.css
+   ============================================ */
+
+/* --- VARIABLES --- */
+:root {
+    --or: #c9a84c;
+    --or-clair: #e8c97e;
+    --or-fantome: rgba(201, 168, 76, 0.267);
+    --noir: #0a0a0a;
+    --noir-doux: #111111;
+    --blanc: #ffffff;
+    --texte: #d4b87a;
+    --texte-doux: rgba(212, 184, 122, 0.6);
+
+    --font-titre: 'Cinzel Decorative', serif;
+    --font-cinzel: 'Cinzel', serif;
+    --font-corps: 'EB Garamond', serif;
+}
+
+/* --- RESET & BASE --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--noir);
+    color: var(--texte);
+    font-family: var(--font-corps);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+a {
+    color: var(--or);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--or-clair);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(10, 10, 10, 0.92);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar-logo img {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 0 6px rgba(201, 168, 76, 0.4));
+    transition: opacity 0.3s ease;
+}
+
+.navbar-logo:hover img {
+    opacity: 0.8;
+}
+
+.navbar-logo p {
+    font-family: var(--font-cinzel);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--or);
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 32px;
+    align-items: center;
+}
+
+.navbar ul li a {
+    font-family: var(--font-cinzel);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--or);
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: var(--or-clair);
+}
+
+/* ============================================
+   SECTION HERO (logo + titre + slogan)
+   ============================================ */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px 20px;
+    position: relative;
+    z-index: 3;
+    gap: 6px;
+}
+
+/* Logo */
+.logo {
+    width: 300px;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 0 18px rgba(201, 168, 76, 0.4));
+}
+
+/* Ornement ❧ ✦ */
+.ornement {
+    width: 60px;
+    height: auto;
+}
+
+/* Sous-titre "Club de dressage..." */
+.subtitle {
+    font-family: var(--font-cinzel);
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: var(--texte-doux);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+/* Double titre */
+.double-title {
+    position: relative;
+    display: inline-block;
+    margin: 4px 0;
+}
+
+.title-ghost {
+    font-family: var(--font-titre);
+    font-size: clamp(60px, 10vw, 120px);
+    font-weight: 700;
+    color: var(--or-fantome);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.title-main {
+    font-family: var(--font-titre);
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 400;
+    color: var(--or);
+    letter-spacing: 0.08em;
+    position: relative;
+    z-index: 1;
+    padding: 16px 0;
+    text-shadow: 0 0 40px rgba(201, 168, 76, 0.3);
+}
+
+/* Slogan */
+.slogan {
+    font-family: var(--font-corps);
+    font-style: italic;
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: var(--or-clair);
+    letter-spacing: 0.04em;
+}
+
+/* Depuis 2015 */
+.since {
+    font-family: var(--font-cinzel);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--or-clair);
+    text-transform: uppercase;
+}
+
+/* ============================================
+   HERO BANNER (image sous le texte)
+   ============================================ */
+.hero-banner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: -250px;
+    z-index: 1;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+/* Fondu noir en HAUT de l'image */
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, var(--noir), transparent);
+    z-index: 2;
+}
+
+/* ============================================
+   SÉPARATEUR ORNEMENT entre sections
+   ============================================ */
+.section-divider {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 18px;
+    color: var(--or);
+    opacity: 0.5;
+    letter-spacing: 1em;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background-color: var(--noir-doux);
+    border-top: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 48px 40px 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Liens pages */
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-links a {
+    font-family: var(--font-cinzel);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--or-clair);
+}
+
+.footer-links span {
+    color: var(--or);
+    opacity: 0.4;
+    font-size: 10px;
+}
+
+/* Réseaux sociaux */
+.footer-socials {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.footer-socials a {
+    font-family: var(--font-cinzel);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--texte-doux);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+    padding-bottom: 2px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--or-clair);
+    border-color: var(--or-clair);
+}
+
+/* Copyright */
+.footer-copy {
+    font-family: var(--font-corps);
+    font-size: 13px;
+    color: var(--texte-doux);
+    opacity: 0.5;
+    letter-spacing: 0.05em;
+}
