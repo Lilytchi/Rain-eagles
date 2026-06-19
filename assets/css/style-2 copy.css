@@ -118,6 +118,166 @@ img {
 }
 
 /* ============================================
+   SECTION HERO (logo + titre + slogan)
+   ============================================ */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px 20px;
+    position: relative;
+    z-index: 3;
+    gap: 6px;
+}
+
+/* Logo */
+.logo {
+    width: 300px;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 0 18px rgba(201, 168, 76, 0.4));
+}
+
+/* Ornement ❧ ✦ */
+.ornement {
+    width: 60px;
+    height: auto;
+}
+
+/* Sous-titre "Club de dressage..." */
+.subtitle {
+    font-family: var(--font-cinzel);
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: var(--texte-doux);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+/* Double titre */
+.double-title {
+    position: relative;
+    display: inline-block;
+    margin: 4px 0;
+}
+
+.title-ghost {
+    font-family: var(--font-titre);
+    font-size: clamp(60px, 10vw, 120px);
+    font-weight: 700;
+    color: var(--or-fantome);
+    letter-spacing: 0.15em;
+
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.title-main {
+    font-family: var(--font-titre);
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 400;
+    color: var(--or);
+    letter-spacing: 0.08em;
+    position: relative;
+    z-index: 1;
+    padding: 16px 0;
+    text-shadow: 0 0 40px rgba(201, 168, 76, 0.3);
+}
+
+/* Slogan */
+.slogan {
+    font-family: var(--font-corps);
+    font-style: italic;
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: var(--or-clair);
+    letter-spacing: 0.04em;
+}
+
+/* Depuis 2015 */
+.since {
+    font-family: var(--font-cinzel);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--or-clair);
+    text-transform: uppercase;
+}
+
+/* ============================================
+   HERO BANNER (image sous le texte)
+   ============================================ */
+.hero-banner-index {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: -250px;
+    z-index: 1;
+}
+
+.hero-banner-index img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+/* Fondu noir en HAUT de l'image */
+.hero-banner-index::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, var(--noir), transparent);
+    z-index: 2;
+}
+
+.hero-banner-1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: -250px;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.separateur-hero {
+    width: 100%;
+    height: 100%;
+    position: relative; 
+    overflow: hidden;
+    margin-top: -165px;
+    opacity: 1;
+    z-index: 2;
+}
+
+/* ============================================
+   SÉPARATEUR ORNEMENT entre sections
+   ============================================ */
+.section-divider {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 18px;
+    color: var(--or);
+    opacity: 0.5;
+    letter-spacing: 1em;
+}
+
+/* ============================================
+   WIP
+   ============================================ */
+.wip{
+    display: flex;
+    justify-content: center;
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 .footer {
@@ -252,6 +412,43 @@ img {
         font-size: 12px;
     }
 
+    .logo {
+        width: 150px;
+        margin-bottom: 16px;
+    }
+
+    .ornement {
+        display: none;
+    }
+
+    .subtitle {
+        font-size: 10px;
+        margin-bottom: 16px;
+    }
+
+    .title-ghost {
+        font-size: clamp(40px, 12vw, 80px);
+        letter-spacing: 0.08em;
+    }
+
+    .title-main {
+        font-size: 8vw;
+        letter-spacing: 0.05em;
+    }
+
+    .hero-banner-index {
+        margin-top: 25px;
+    }
+
+    .hero {
+        padding: 60px 16px 10px;
+        gap: 4px;
+    }
+
+    .Diams {
+        display: none;
+    }
+
     .footer {
     padding: 28px 20px 20px;
     gap: 14px;
@@ -268,5 +465,9 @@ img {
     .footer-copy {
         font-size: 11px;
     }
+
+    .since {
+        font-size: 10px;
+}
 
 }
